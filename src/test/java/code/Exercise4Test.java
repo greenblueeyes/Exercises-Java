@@ -3,7 +3,7 @@ package code;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class Exercise4Test {
 
@@ -12,8 +12,8 @@ public class Exercise4Test {
     @Test
     void testRun_case_1() {
        float result = ex4.run(
-            Arrays.asList(1, 3),
-            Arrays.asList(2)
+            List.of(1, 3),
+            List.of(2)
         );
         Assertions.assertEquals(2f, result);
     }
@@ -21,8 +21,8 @@ public class Exercise4Test {
     @Test
     void testRun_case_2() {
         float result = ex4.run(
-                Arrays.asList(1, 2),
-                Arrays.asList(3, 4)
+                List.of(1, 2),
+                List.of(3, 4)
         );
         Assertions.assertEquals(2.5f, result);
     }
