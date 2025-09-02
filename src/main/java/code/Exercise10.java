@@ -32,5 +32,8 @@ public class Exercise10 {
  // s contains only lowercase English letters.
  // p contains only lowercase English letters, '.', and '*'.
  // It is guaranteed for each appearance of the character '*', there will be a previous valid character to match.
- ///
+
+    public boolean solve(final String input, final String pattern) {
+        return false;
+    }
 }
