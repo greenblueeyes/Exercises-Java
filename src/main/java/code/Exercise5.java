@@ -48,7 +48,7 @@ public class Exercise5 {
 
         while(idxLeft < str.length()) {
             int centeredStartIdx = isMatchingOutward(str, idxLeft - 1, idxLeft + 1);
-            if (centeredStartIdx < idxLeft) {
+            if (centeredStartIdx>= 0 && centeredStartIdx < idxLeft) {
                 int subStringLen = ((idxLeft - centeredStartIdx) * 2) + 1;
                 String key = String.format("%d|%d", centeredStartIdx, centeredStartIdx + ((idxLeft - centeredStartIdx) * 2));
                 palindromes.put(key, subStringLen);
@@ -59,7 +59,7 @@ public class Exercise5 {
             }
 
             int mirroredStartIdx = isMatchingOutward(str, idxLeft, idxLeft + 1);
-            if (mirroredStartIdx < idxLeft) {
+            if (mirroredStartIdx >=0 && mirroredStartIdx <= idxLeft) {
                 int subStringLen = (idxLeft - mirroredStartIdx + 1) * 2;
                 String key = String.format("%d|%d", mirroredStartIdx, mirroredStartIdx + subStringLen - 1);
                 palindromes.put(key, subStringLen);
@@ -84,7 +84,7 @@ public class Exercise5 {
 
     static int isMatchingOutward(final String str, final int idxLeft, final int idxRight) {
         if (idxLeft < 0 || idxRight >= str.length()) {
-            return idxLeft;
+            return idxLeft + 1;
         }
 
         if (str.charAt(idxLeft) == str.charAt(idxRight)) {
