@@ -5,14 +5,15 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Exercise2Test {
 
     @Test
     void testSum_case_1() {
         var ex2 = new Exercise2(
-            new LinkedList<Integer>(Arrays.asList(new Integer[] {2,4,3})),
-            new LinkedList<Integer>(Arrays.asList(new Integer[] {5,6,4}))
+            new LinkedList<>(Arrays.asList(2, 4, 3)),
+            new LinkedList<>(Arrays.asList(5, 6, 4))
         );
 
         Assertions.assertEquals(807, ex2.sum());
@@ -21,8 +22,8 @@ public class Exercise2Test {
     @Test
     void testRun_case_1() {
         var ex2 = new Exercise2(
-                new LinkedList<Integer>(Arrays.asList(new Integer[] {2,4,3})),
-                new LinkedList<Integer>(Arrays.asList(new Integer[] {5,6,4}))
+                new LinkedList<>(Arrays.asList(2, 4, 3)),
+                new LinkedList<>(Arrays.asList(5, 6, 4))
         );
 
         var result = ex2.run();
@@ -36,8 +37,8 @@ public class Exercise2Test {
     @Test
     void testSum_case_2() {
         var ex2 = new Exercise2(
-                new LinkedList<Integer>(Arrays.asList(new Integer[] {0})),
-                new LinkedList<Integer>(Arrays.asList(new Integer[] {0}))
+                new LinkedList<>(List.of(0)),
+                new LinkedList<>(List.of(0))
         );
 
         Assertions.assertEquals(0, ex2.sum());
@@ -46,21 +47,21 @@ public class Exercise2Test {
     @Test
     void testRun_case_2() {
         var ex2 = new Exercise2(
-                new LinkedList<Integer>(Arrays.asList(new Integer[] {0})),
-                new LinkedList<Integer>(Arrays.asList(new Integer[] {0}))
+                new LinkedList<>(List.of(0)),
+                new LinkedList<>(List.of(0))
         );
 
         var result = ex2.run();
         Assertions.assertNotNull(result);
         Assertions.assertFalse(result.isEmpty());
-        Assertions.assertEquals(0, result.get(0));
+        Assertions.assertEquals(0, result.getFirst());
     }
 
     @Test
     void testSum_case_3() {
         var ex2 = new Exercise2(
-                new LinkedList<Integer>(Arrays.asList(new Integer[] {9,9,9,9,9,9,9})),
-                new LinkedList<Integer>(Arrays.asList(new Integer[] {9,9,9,9}))
+                new LinkedList<>(Arrays.asList(9, 9, 9, 9, 9, 9, 9)),
+                new LinkedList<>(Arrays.asList(9, 9, 9, 9))
         );
 
         Assertions.assertEquals(10009998, ex2.sum());
@@ -69,8 +70,8 @@ public class Exercise2Test {
     @Test
     void testRun_case_3() {
         var ex2 = new Exercise2(
-                new LinkedList<Integer>(Arrays.asList(new Integer[] {9,9,9,9,9,9,9})),
-                new LinkedList<Integer>(Arrays.asList(new Integer[] {9,9,9,9}))
+                new LinkedList<>(Arrays.asList(9, 9, 9, 9, 9, 9, 9)),
+                new LinkedList<>(Arrays.asList(9, 9, 9, 9))
         );
 
         var result = ex2.run();

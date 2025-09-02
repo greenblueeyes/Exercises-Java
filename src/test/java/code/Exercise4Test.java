@@ -12,8 +12,8 @@ public class Exercise4Test {
     @Test
     void testRun_case_1() {
        float result = ex4.run(
-            Arrays.asList(new Integer[] {1,3}),
-            Arrays.asList(new Integer[] {2})
+            Arrays.asList(1, 3),
+            Arrays.asList(2)
         );
         Assertions.assertEquals(2f, result);
     }
@@ -21,8 +21,8 @@ public class Exercise4Test {
     @Test
     void testRun_case_2() {
         float result = ex4.run(
-                Arrays.asList(new Integer[] {1,2}),
-                Arrays.asList(new Integer[] {3,4})
+                Arrays.asList(1, 2),
+                Arrays.asList(3, 4)
         );
         Assertions.assertEquals(2.5f, result);
     }

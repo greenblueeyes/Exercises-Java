@@ -4,21 +4,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Exercise5 {
-    /**
-     * Given a string s, return the longest palindromic substring in s.
-     *
-     * Example 1:
-     *
-     * Input: s = "babad"
-     * Output: "bab"
-     * Explanation: "aba" is also a valid answer.
-     * Example 2:
-     *
-     * Input: s = "cbbd"
-     * Output: "bb"
-     *
-     * tattarrattat
-     */
+
+    // Given a string s, return the longest palindromic substring in s.
+    //
+    // Example 1:
+    // ---------
+    // Input: s = "babad"
+    // Output: "bab"
+    // Explanation: "aba" is also a valid answer.
+    //
+    // Example 2:
+    // ---------
+    // Input: s = "cbbd"
+    // Output: "bb"
+    //
+    // tattarrattat
 
     public static boolean isPalindrome(final String str) {
         boolean isPalindrome = true;
@@ -93,7 +93,4 @@ public class Exercise5 {
             return idxLeft+1;
         }
     }
-
-
-
 }

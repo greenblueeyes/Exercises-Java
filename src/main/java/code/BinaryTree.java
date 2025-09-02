@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 public class BinaryTree<T extends Comparable<T>> {
     enum Child {
         LEFT,
-        RIGHT;
+        RIGHT
     }
 
     /**
@@ -25,13 +25,13 @@ public class BinaryTree<T extends Comparable<T>> {
         }
 
         public Node<T> setLeft(final T leftValue) {
-            this.childLeft = new Node<T>(leftValue);
+            this.childLeft = new Node<>(leftValue);
 
             return this.childLeft;
         }
 
         public Node<T> setRight(final T rightValue) {
-            this.childRight = new Node<T>(rightValue);
+            this.childRight = new Node<>(rightValue);
 
             return this.childRight;
         }
@@ -82,7 +82,7 @@ public class BinaryTree<T extends Comparable<T>> {
      * @param rootValue initial value to add to binary tree
      */
     private void initialize(final T rootValue){
-        this.root = new Node<T>(rootValue);
+        this.root = new Node<>(rootValue);
         size++;
     }
 
@@ -152,7 +152,7 @@ public class BinaryTree<T extends Comparable<T>> {
      * @return empty list if BinaryTree contains no nodes; otherwise List<T>
      */
     public List<T> toList() {
-        final List<T> result = size == 0? Collections.emptyList() : new ArrayList<T>(size);
+        final List<T> result = size == 0? Collections.emptyList() : new ArrayList<>(size);
 
         if (size == 0) {
             return result;
@@ -165,8 +165,8 @@ public class BinaryTree<T extends Comparable<T>> {
 
     /**
      * Navigates through BinaryTree in order from left-most to right-most item
-     * @param node
-     * @param consumer
+     * @param node root of tree
+     * @param consumer Consumer<T> implementation to perform some logic with value of each node
      */
     public void navigate(final Node<T> node, final Consumer<T> consumer) {
         if (node.getLeft() != null) {

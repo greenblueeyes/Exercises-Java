@@ -1,38 +1,34 @@
 package code;
 
-import java.math.BigInteger;
 import java.util.Arrays;
 
 public class Exercise7 {
-    /**
-     * https://leetcode.com/problems/reverse-integer
-     *
-     * Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
-     *
-     * Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
-     *
-     *
-     *
-     * Example 1:
-     * ---------
-     * Input: x = 123
-     * Output: 321
-     *
-     * Example 2:
-     * ---------
-     * Input: x = -123
-     * Output: -321
-     *
-     * Example 3:
-     * ---------
-     * Input: x = 120
-     * Output: 21
-     *
-     *
-     * Constraints:
-     *
-     * -2^31 <= x <= 2^31 - 1
-     */
+
+    // https://leetcode.com/problems/reverse-integer
+    //
+    // Given a signed 32-bit integer x, return x with its digits reversed. If reversing x causes the value to go outside the signed 32-bit integer range [-231, 231 - 1], then return 0.
+    //
+    // Assume the environment does not allow you to store 64-bit integers (signed or unsigned).
+    //
+    // Example 1:
+    // ---------
+    // Input: x = 123
+    // Output: 321
+    //
+    // Example 2:
+    // ---------
+    // Input: x = -123
+    // Output: -321
+    //
+    // Example 3:
+    // ---------
+    // Input: x = 120
+    // Output: 21
+    //
+    // Constraints:
+    //
+    // -2^31 <= x <= 2^31 - 1
+
     int[] tenPowers = new int[] {
         1,
         10,
@@ -57,7 +53,7 @@ public class Exercise7 {
         int decimalPlace = 1;
         int reversal = 0;
         while (idxPower >= 0) {
-            int digit = Math.floorDiv(toReverseInwork, (int) tenPowers[idxPower]);
+            int digit = Math.floorDiv(toReverseInwork, tenPowers[idxPower]);
             reversal += digit * decimalPlace;
             toReverseInwork -= (digit * tenPowers[idxPower]);
             decimalPlace *= 10;
@@ -86,7 +82,7 @@ public class Exercise7 {
         Arrays.fill(reversal, '0');
 
         while(idxPower >= 0) {
-            int digit = Math.floorDiv(toReverseInwork, (int) tenPowers[idxPower]);
+            int digit = Math.floorDiv(toReverseInwork, tenPowers[idxPower]);
             reversal[idxPower] = (char) (digit + 48);
             toReverseInwork -= (digit * tenPowers[idxPower]);
             idxPower--;
