@@ -23,7 +23,7 @@ public class Exercise5 {
     public static boolean isPalindrome(final String str) {
         boolean isPalindrome = true;
         int idxLeft = 0;
-        int idxRight = 0;
+        int idxRight;
 
         if (str == null) {
             throw new IllegalArgumentException("Invalid string value provided");
