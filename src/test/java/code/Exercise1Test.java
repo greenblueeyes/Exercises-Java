@@ -9,22 +9,54 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import code.Exercise1;
-
 public class Exercise1Test {
 
-    private final Exercise1 exercise = new Exercise1();
+    private Exercise1 exercise = new Exercise1();
 
     @Test
-    void testFindIndicies() {
+    void testFindIndices() {
       List<Integer> result = exercise.findIndices(50);
 
       assertNotNull(result);
       assertFalse(result.isEmpty());
       assertEquals(2, result.size());
-      assertTrue(result.contains(3));
-      assertTrue(result.contains(5));
+      assertTrue(result.contains(2));
+      assertTrue(result.contains(4));
     }
+
+    @Test
+    void testFindIndices_test1() {
+        exercise = new Exercise1(Exercise1.SearchArrays.TEST1);
+
+        List<Integer> result = exercise.findIndices(9);
+
+        assertNotNull(result);
+        assertFalse(result.isEmpty());
+        assertEquals(2, result.size());
+    }
+
+    @Test
+    void testFindIndices_test2() {
+        exercise = new Exercise1(Exercise1.SearchArrays.TEST2);
+
+        List<Integer> result = exercise.findIndices(6);
+
+        assertNotNull(result);
+        assertFalse(result.isEmpty());
+        assertEquals(2, result.size());
+    }
+
+    @Test
+    void testFindIndices_test3() {
+        exercise = new Exercise1(Exercise1.SearchArrays.TEST3);
+
+        List<Integer> result = exercise.findIndices(6);
+
+        assertNotNull(result);
+        assertFalse(result.isEmpty());
+        assertEquals(2, result.size());
+    }
+
 
     @Test
     void testFindIndices_noMatch() {
